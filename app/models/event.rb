@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-    # Event can have many guests
+    # Event can have many event_guests
     has_many :event_guests, foreign_key: :attended_event_id
     
     # Event can have many attendees through event_guests
