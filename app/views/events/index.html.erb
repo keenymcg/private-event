@@ -1,10 +1,14 @@
-<%# Display a list of all the events %>
-
-<h1>Events</h1>
+<% if user_signed_in? %>
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+    <%= link_to "Profile", user_path(current_user) %>
+<% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+<% end %>
+<h1>All Events</h1>
 
 <% @events.each do |event| %>
-    <p><%= event.name %></p>
+    <p><%= link_to event.name, event_path(event) %></p>
 <% end %>
 
-<%# Add a link to the new event page %>
 <%= link_to 'New Event', new_event_path %>
