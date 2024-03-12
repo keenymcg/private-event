@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
 
-  resources :events
+  resources :events do
+    resources :event_guests, only: [:create, :destroy]
+  end
 end
