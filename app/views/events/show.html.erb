@@ -4,10 +4,16 @@
 
 <%# Shows the name, date, location, and description of the event %>
 <h1><%= @event.name %></h1>
-<p><strong>Date:</strong> <%= @event.date %></p>
+<p><strong>Date:</strong> <%= @event.date.strftime("%m/%d/%Y") %></p>
 <p><strong>Location:</strong> <%= @event.location %></p>
-<p><strong>Description:</strong> <%= @event.description %></p>
+<p><strong>Created by:</strong> <%= User.find(@event.creator_id).name %></p>
+
+<!-- Add list of guests attending this event -->
+<p><strong>Guests:</strong></p> 
 
 <%# TASK: Add link to edit event if you are the creator of the event %>
 <%# TASK: Add link to delete event if you are the creator of the event %>
 <%# TASK: Add Button to join the event if you are not the creator of the event %>
+<%# TASK: Add Button to leave the event if you are not the creator of the event %>
+
+<%= link_to 'All Events', events_path %>
