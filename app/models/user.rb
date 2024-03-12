@@ -8,10 +8,10 @@ class User < ApplicationRecord
   # User can have many created events.  
   has_many :created_events, foreign_key: :creator_id, class_name: 'Event'
 
+  # # User can have many events they attend, through event_guests.
+  # has_many :guested_events, through: :event_guests, source: :event
+
   # # User can have many event_guests.
   # has_many :event_guests, foreign_key: :attendee_id
-
-  # # User can have many attended events through event_guests.
-  # has_many :attended_events, through: :event_guests, source: :event
 
 end
