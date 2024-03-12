@@ -1,0 +1,7 @@
+<%# Display a list of all the events %>
+
+<h1>Events</h1>
+
+<% @events.each do |event| %>
+    <p><%= event.name %></p>
+<% end %>
