@@ -1,5 +1,11 @@
+<%# TASKS %>
+<%# - create condition of if user is signed in, can show this material %>
+<%# - Add links, like link to Index page, and maybe to create event %>
+<%# - Add button to sign out %>
+
 
 <!-- Show all events created by a user-->
-<h1>Events</h1>
+<h1>My Events</h1>
 <% @user.events.each do |event| %>
-    <p><%= event.name %></p>
+    <p><%= event.name %></p> 
+    <%# TASK: Add link to event name User can click to go to the event's show page %>

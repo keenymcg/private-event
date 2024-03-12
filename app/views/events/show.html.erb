@@ -1,6 +1,13 @@
-<%# Shows the title, date, location, and description of the event %>
+<%# TASKS %>
+<%# - create condition of if user is signed in, can show this material %>
+<%# - Add links, like link to Index page, link to user's profile, and maybe to create event %>
 
+<%# Shows the title, date, location, and description of the event %>
 <h1><%= @event.title %></h1>
 <p><strong>Date:</strong> <%= @event.date %></p>
 <p><strong>Location:</strong> <%= @event.location %></p>
 <p><strong>Description:</strong> <%= @event.description %></p>
+
+<%# TASK: Add link to edit event if you are the creator of the event %>
+<%# TASK: Add link to delete event if you are the creator of the event %>
+<%# TASK: Add Button to join the event if you are not the creator of the event %>
