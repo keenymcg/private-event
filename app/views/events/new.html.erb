@@ -1,7 +1,7 @@
 
 <% if user_signed_in? %>
     <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
-    <%= link_to "Profile", users_path(current_user) %>
+    <%= link_to "Profile", user_path(current_user) %>
 <% end %>
 
 <h1> Create event: </h1>
