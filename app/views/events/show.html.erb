@@ -4,14 +4,37 @@
 
 <%# Shows the name, date, location, and description of the event %>
 <h1><%= @event.name %></h1>
+
+<% if current_user && current_user.id == @event.creator_id %>
+    <%= link_to 'Edit Event', edit_event_path(@event) %>
+<% end %>
+
 <p><strong>Date:</strong> <%= @event.date.strftime("%m/%d/%Y") %></p>
 <p><strong>Location:</strong> <%= @event.location %></p>
 <p><strong>Created by:</strong> <%= User.find(@event.creator_id).name %></p>
 
+<% if user_signed_in? %>
+    <%= form_with(url: event_event_guests_path(@event), method: :post) do %>
+        <%= submit_tag "Attend Event" %>
+    <% end %>
+<% else %>
+    <%= link_to "Sign in to Attend", new_user_session_path %>
+<% end %>
+
+
+
 <!-- Add list of guests attending this event -->
 <p><strong>Guests:</strong></p> 
+<% if @event.attendees.any? %>
+    <ul>
+        <% @event.attendees.each do |guest| %>
+            <li><%= guest.name %></li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>No one is attending this event yet.</p>
+<% end %>
 
-<%# TASK: Add link to edit event if you are the creator of the event %>
 <%# TASK: Add link to delete event if you are the creator of the event %>
 <%# TASK: Add Button to join the event if you are not the creator of the event %>
 <%# TASK: Add Button to leave the event if you are not the creator of the event %>
