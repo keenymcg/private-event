@@ -23,6 +23,23 @@
     <p>You currently have no events.</p>
 <% end %>
 
+<!-- Show all events that the user is attending -->
+<h2>Attending Events</h2>
+
+<% if @user.attended_events.any? %>
+    <ul>
+        <% @user.attended_events.each do |event| %>
+            <li>
+                <%= event.name %>
+                <%= link_to "View", event_path(event) %>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>You are not attending any events.</p>
+<% end %>
+
+
 <!-- TASK: Add link to create a new event -->
 <!-- TASK: Add link to edit event -->
 <!-- TASK: Add link to delete event -->
