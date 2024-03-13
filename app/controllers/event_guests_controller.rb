@@ -3,16 +3,9 @@ class EventGuestsController < ApplicationController
     
     def create
         # Logic to create a new attendance record
-        @event_guest = EventGuest.new(event_guest_params)
-        @event_guest.user = current_user
-
-        if @event_guest.save
-            # Success message or redirect to a success page
-            redirect_to @event, notice: 'You are now attending this event.'
-        else
-            # Error handling code
-            render :new, status: :unprocessable_entity
-        end
+        @event = Event.find(params[:event_id])
+        @event.attendees << current_user
+        redirect_to @event, notice: 'Successfully attended the event.'
     end
     
     def destroy
