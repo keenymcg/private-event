@@ -3,6 +3,14 @@ html, body {
     padding: 0;
 } 
 
+/* ALERTS */
+
+.alert-danger {
+    color: red;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
 /* HEADER */
 
 .navbar {
@@ -24,7 +32,7 @@ html, body {
 }
 
 .navbar-item:hover {
-    background-color: #555; /* Change the background color on hover as desired */
+    color: #e93838; /* Change the background color on hover as desired */
 }
 
 /* BODY */
@@ -49,4 +57,16 @@ body {
     font-size: 16px; /* Change the font size as desired */
     font-weight: bold; /* Set font weight to bold */
     margin: 10px 0; /* Add margin as desired */
+}
+
+.sign-out-btn {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
 }
