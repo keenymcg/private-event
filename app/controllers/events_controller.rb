@@ -3,6 +3,8 @@ class EventsController < ApplicationController
     def index
         @events = Event.all
         # alternative option from CoPilot: @events = current_user.events.build
+        # @past_events = Event.past
+        # @upcoming_events = Event.upcoming
     end
     
     # see another TOP student's code: https://github.com/Hadayxinchao/Private_Events/blob/main/app/controllers/events_controller.rb
@@ -37,6 +39,7 @@ class EventsController < ApplicationController
             render :edit
         end
     end
+
     
     private
         
