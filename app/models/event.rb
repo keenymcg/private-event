@@ -8,4 +8,12 @@ class Event < ApplicationRecord
 
     # Event can have one creator
     belongs_to :creator, class_name: 'User'
+
+    def self.past
+        where('date < ?', Date.today)
+    end
+
+    def self.upcoming
+        where('date >= ?', Date.today)
+    end
 end
