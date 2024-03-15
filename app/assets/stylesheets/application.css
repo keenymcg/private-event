@@ -1,15 +1,52 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html, body {
+    margin: 0;
+    padding: 0;
+} 
+
+/* HEADER */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f9e79f; /* Change the background color as desired */
+    overflow: hidden;
+    /* margin-right: 10px; Add desired margin between navbar items */
+    font-weight: bold; /* Set font weight to bold */
+    font-family: "Arial", sans-serif; /* Change font family to desired sleeker font */
+}
+
+.navbar-item {
+    float: left;
+    display: block;
+    color: white; /* Change the text color as desired */
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.navbar-item:hover {
+    background-color: #555; /* Change the background color on hover as desired */
+}
+
+/* BODY */
+
+body {
+    background-color: #f2f2f2; /* Set the background color for the body */
+    font-family: "Arial", sans-serif; /* Change font family to desired font */
+    color: #333; /* Set the text color for the body */
+    line-height: 1.5; /* Set the line height for better readability */
+}
+
+.container {
+    padding: 20px; /* Add padding to the body */
+}
+
+.button {
+    background-color: #f9e79f; /* Change the background color as desired */
+    color: rgb(21, 21, 21); /* Change the text color as desired */
+    padding: 10px 20px; /* Change the padding as desired */
+    border: 1px solid #151515; /* Change the border color as desired */
+    cursor: pointer; /* Change the cursor to pointer */
+    font-size: 16px; /* Change the font size as desired */
+    font-weight: bold; /* Set font weight to bold */
+    margin: 10px 0; /* Add margin as desired */
+}
