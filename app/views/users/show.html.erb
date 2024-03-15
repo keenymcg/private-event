@@ -27,14 +27,36 @@
 <h2>Attending Events</h2>
 
 <% if @user.attended_events.any? %>
-    <ul>
-        <% @user.attended_events.each do |event| %>
-            <li>
-                <%= event.name %>
-                <%= link_to "View", event_path(event) %>
-            </li>
-        <% end %>
-    </ul>
+    <% upcoming_events = @user.attended_events.select { |event| event.date >= Date.today } %>
+    <% past_events = @user.attended_events.select { |event| event.date < Date.today } %>
+
+    <h2>Upcoming Events</h2>
+    <% if upcoming_events.any? %>
+        <ul>
+            <% upcoming_events.each do |event| %>
+                <li>
+                    <%= event.name %>
+                    <%= link_to "View", event_path(event) %>
+                </li>
+            <% end %>
+        </ul>
+    <% else %>
+        <p>You have no upcoming events.</p>
+    <% end %>
+
+    <h2>Past Events</h2>
+    <% if past_events.any? %>
+        <ul>
+            <% past_events.each do |event| %>
+                <li>
+                    <%= event.name %>
+                    <%= link_to "View", event_path(event) %>
+                </li>
+            <% end %>
+        </ul>
+    <% else %>
+        <p>You have no past events.</p>
+    <% end %>
 <% else %>
     <p>You are not attending any events.</p>
 <% end %>
