@@ -1,0 +1,13 @@
+<%# Can't figure out how to render this partial on the index page for now %>
+<%# TEMPORARILY OUT OF USE %>
+
+<h1>Upcoming Events</h1>
+<%= render @upcoming_events do |event| %>
+    <%= link_to event.name, event %>
+<% end %>
+
+<h1>Past Events</h1>
+<%= render @past_events do |event| %>
+    <%= link_to event.name, event %>
+<% end %>
+
