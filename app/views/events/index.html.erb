@@ -7,8 +7,22 @@
 <% end %>
 <h1>All Events</h1>
 
-<% @events.each do |event| %>
-    <p><%= link_to event.name, event_path(event) %></p>
+<h2>Upcoming Events</h2>
+<% if @events.upcoming.empty? %>
+    <p>No upcoming events</p>
+<% else %>
+    <% @events.upcoming.each do |event| %>
+        <p><%= link_to event.name, event_path(event) %></p>
+    <% end %>
+<% end %>
+
+<h2>Past Events</h2>
+<% if @events.past.empty? %>
+    <p>No past events</p>
+<% else %>
+    <% @events.past.each do |event| %>
+        <p><%= link_to event.name, event_path(event) %></p>
+    <% end %>
 <% end %>
 
 <%= link_to 'New Event', new_event_path %>
