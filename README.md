@@ -1,6 +1,6 @@
 # [Private Events Project](https://www.theodinproject.com/lessons/ruby-on-rails-private-events)
 
-### The odin Project: Full Stack Ruby on Rails curriculum
+### The Odin Project: Full Stack Ruby on Rails curriculum
 
 This is an exercise in building/using Active Record associations to create an Events app that allows users to Create or Attend events.
 
