@@ -31,7 +31,6 @@ This is an exercise in building/using Active Record associations to create an Ev
   - Utilized scopes for cleaner and more efficient query logic.
 
 - **User Interface**:
-  - Designed a user-friendly interface with navigation links for ease of access.
   - Displayed user-specific data such as created and attended events on profile pages.
 
 - **Database and ActiveRecord**:
